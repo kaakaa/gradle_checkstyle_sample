@@ -2,8 +2,4 @@ def root = /../ as File
 def filter = {it.isDirectory() && !it.name.startsWith('.')} as FileFilter
 def projects = (String[])root.listFiles(filter).collect({it.name}).toArray()
 
-println projects.class
-println projects
-println projects.length
-
 includeFlat(projects)
